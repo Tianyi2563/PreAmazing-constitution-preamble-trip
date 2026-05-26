@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>宪法序言知识闯关 - 交互学习</title>
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/quiz.css">
+</head>
+<body>
+    <div class="page-wrapper">
+        <!-- 导航栏 -->
+        <nav class="navbar" id="navbar">
+            <div class="navbar-inner">
+                <a href="index.html" class="navbar-brand">宪法序言·交互学习</a>
+                <button class="navbar-toggle" aria-label="菜单" id="navToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="navbar-nav" id="navLinks">
+                    <li><a href="index.html" class="navbar-link">首页</a></li>
+                    <li><a href="preamble.html" class="navbar-link">序言展示</a></li>
+                    <li><a href="versions.html" class="navbar-link">版本迭代</a></li>
+                    <li><a href="quiz.html" class="navbar-link active">知识闯关</a></li>
+                    <li><a href="co-create.html" class="navbar-link">共创序言</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- 主要内容 -->
+        <main class="main-content quiz-page">
+            <!-- 闯关首页 -->
+            <div id="quizStart" class="quiz-start">
+                <div class="container">
+                    <div class="start-card">
+                        <h1 class="start-title">知识闯关</h1>
+                        <p class="start-desc">测试你对宪法序言的了解程度！</p>
+                        <div class="start-info">
+                            <div class="info-item">
+                                <span class="info-value">10</span>
+                                <span class="info-label">题目</span>
+                            </div>
+                            <div class="info-item">
+                                <span class="info-value">100</span>
+                                <span class="info-label">满分</span>
+                            </div>
+                        </div>
+                        <button id="startBtn" class="btn btn-primary btn-lg">开始闯关</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 答题区 -->
+            <div id="quizPlay" class="quiz-play hidden">
+                <div class="container">
+                    <!-- 进度条 -->
+                    <div class="quiz-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progressFill"></div>
+                        </div>
+                        <div class="progress-text">
+                            <span id="currentQ">1</span> / <span id="totalQ">10</span>
+                        </div>
+                        <div class="quiz-timer">
+                            <span id="timerValue">300</span>秒
+                        </div>
+                    </div>
+
+                    <!-- 题目 -->
+                    <div class="question-card" id="questionCard">
+                        <div class="question-header">
+                            <span class="question-difficulty" id="difficultyTag"></span>
+                        </div>
+                        <div class="question-text" id="questionText"></div>
+                        
+                        <!-- 选择题选项 -->
+                        <div class="options-container" id="optionsContainer">
+                        </div>
+
+                        <!-- 填空题输入 -->
+                        <div class="fill-container hidden" id="fillContainer">
+                            <input type="text" id="fillInput" placeholder="请输入答案..." class="fill-input">
+                        </div>
+
+                        <div class="question-actions">
+                            <button id="submitBtn" class="btn btn-primary">提交答案</button>
+                            <button id="nextBtn" class="btn btn-secondary hidden">下一题</button>
+                        </div>
+
+                        <!-- 答案反馈 -->
+                        <div class="answer-feedback hidden" id="answerFeedback">
+                        </div>
+                    </div>
+
+                    <!-- 实时得分 -->
+                    <div class="score-display">
+                        当前得分：<span id="currentScore">0</span> 分
+                    </div>
+                </div>
+            </div>
+
+            <!-- 结果页 -->
+            <div id="quizResult" class="quiz-result hidden">
+                <div class="container">
+                    <div class="result-card">
+                        <div class="result-icon" id="resultIcon"></div>
+                        <h2 class="result-title" id="resultTitle"></h2>
+                        <div class="result-score">
+                            <span class="final-score" id="finalScore">0</span>
+                            <span class="score-label">分</span>
+                        </div>
+                        <div class="result-stats">
+                            <div class="stat-row">
+                                <span class="stat-label">正确题数</span>
+                                <span class="stat-value" id="correctCount">0</span>
+                            </div>
+                            <div class="stat-row">
+                                <span class="stat-label">正确率</span>
+                                <span class="stat-value" id="accuracy">0%</span>
+                            </div>
+                        </div>
+                        <div class="result-actions">
+                            <button id="retryBtn" class="btn btn-primary">再闯一次</button>
+                            <a href="index.html" class="btn btn-secondary">返回首页</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- 页脚 -->
+        <footer class="footer">
+            <div class="footer-inner">
+                <p class="footer-text">宪法序言交互学习系统</p>
+                <div class="footer-links">
+                    <a href="index.html" class="footer-link">返回首页</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="js/main.js"></script>
+    <script src="js/quiz.js"></script>
+</body>
+</html>
